@@ -254,11 +254,39 @@ const App = () => {
       <section className="py-20">
         <h1 className="mt- text-center text-5xl font-bold">About Me</h1>
 
-        <p className="mt-12 px-4 text-center text-balance">
-          Greetings, I'm Dave Eucharis Payumo, I've been coding since I was 12
+        <p className="mx-auto mt-12 max-w-4xl px-4 text-wrap">
+          {/* Greetings, I'm Dave Eucharis Payumo, I've been coding since I was 12
           years old but for my favorite game "Minecraft", now you might ask,
           how's that relevant? Well, because of Javascript, yes, I've been
-          writing code
+          writing code */}
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
+          consequatur exercitationem aut quae, tempore ab animi quam. Excepturi
+          eaque perspiciatis delectus quae enim saepe minima voluptate earum,
+          facilis, distinctio dolorem architecto debitis? Velit saepe id
+          assumenda libero fuga magnam expedita? lorem
+          <br />
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, atque
+          reprehenderit! Doloremque quasi cupiditate nesciunt quam iste optio
+          laboriosam. Placeat eius repudiandae, eos assumenda facere veniam
+          dicta officiis id! Et, autem veritatis. Unde quae inventore nisi a
+          quam perspiciatis ullam laboriosam impedit placeat, nobis quis! Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi
+          beatae ducimus. Voluptatem voluptas, rem repellat qui sequi explicabo
+          quia nobis nostrum earum, assumenda minima quidem maxime ab voluptates
+          sed.
+          <br />
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+          molestias placeat sunt numquam id non labore cumque, vel expedita eos
+          fuga amet doloremque rem asperiores facilis dignissimos et eum officia
+          illum, repellat consectetur eligendi ipsam quod quasi. Optio, atque.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          reiciendis a quo sed consequatur quae architecto! Quisquam consequatur
+          sequi explicabo fugiat incidunt quidem sunt quo neque? Aliquam
+          molestiae magni quae! Nesciunt!
         </p>
       </section>
 

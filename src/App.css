@@ -16,9 +16,15 @@ body {
 }
 
 @utility logoHover {
-  @apply scale-150 [&>p]:opacity-100 [&>svg]:drop-shadow-[0_0_0.1rem_var(--color-primary)];
+  @apply scale-150 !opacity-100 [&>p]:opacity-100 [&>svg]:drop-shadow-[0_0_0.1rem_var(--color-primary)];
 }
 
 @utility flex-center {
   @apply flex items-center justify-center;
+}
+
+@utility transition-1 {
+  transition:
+    scale 150ms,
+    opacity 150ms;
 }

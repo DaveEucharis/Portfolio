@@ -5,6 +5,7 @@ type projectsData = {
   img: string;
   title: string;
   details: string;
+  link: string;
 }[];
 
 const Projects = () => {
@@ -13,11 +14,13 @@ const Projects = () => {
       img: homehugSS,
       title: "HomeHug",
       details: "lorem lorem lorem lorem lorem lorem lorem lorem",
+      link: "#",
     },
     {
       img: crashSS,
       title: "Crash Insurance",
       details: "lorem lolorem lorem lorem lorem lorem lorem lorem lorem",
+      link: "#",
     },
   ];
 
@@ -28,13 +31,15 @@ const Projects = () => {
           key={i}
           className="group w-sm cursor-pointer transition-transform hover:-translate-y-10"
         >
-          <img
-            src={v.img}
-            alt=""
-            className="group-hover: h-50 w-full rounded-lg"
-          />
-          <h2 className="mt-2 text-2xl font-bold">{v.title}</h2>
-          <p className="opacity-80">{v.details}</p>
+          <a href={v.link} target="_blank">
+            <img
+              src={v.img}
+              alt=""
+              className="group-hover: h-50 w-full rounded-lg"
+            />
+            <h2 className="mt-2 text-2xl font-bold">{v.title}</h2>
+            <p className="opacity-80">{v.details}</p>
+          </a>
         </li>
       ))}
     </ul>
