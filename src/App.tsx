@@ -16,14 +16,49 @@ const App = () => {
   }, []);
   return (
     <>
+      <nav className="fixed z-10 w-full bg-white/3 p-5 backdrop-blur-sm">
+        <ul className="mr-24 ml-auto flex w-fit gap-12">
+          <li>
+            <a className="peer text-shadow cursor-pointer text-xl" href="#home">
+              Home
+            </a>
+            <div className="transition-w ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
+          </li>
+          <li>
+            <a
+              className="text-shadow peer cursor-pointer text-xl"
+              href="#projects"
+            >
+              Projects
+            </a>
+            <div className="transition-w ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
+          </li>
+          <li>
+            <a
+              className="text-shadow peer cursor-pointer text-xl"
+              href="#aboutme"
+            >
+              About Me
+            </a>
+            <div className="transition-w ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
+          </li>
+        </ul>
+      </nav>
+
       {/* Hero Section */}
-      <section className="flex-center min-h-dvh gap-6 max-sm:flex-col">
+      <section
+        id="home"
+        className="flex-center relative min-h-dvh gap-6 overflow-hidden max-sm:flex-col"
+      >
+        <div className="moon-animation absolute -z-10 size-28 rounded-full bg-amber-300 inset-shadow-sm inset-shadow-amber-500 brightness-5 drop-shadow-[0_0_10rem_var(--moon-color)]"></div>
+
         <div className="p-4">
-          <h1 className="text-5xl font-bold">Dave Eucharis Payumo</h1>
+          <h1 className="text-7xl font-bold">Dave Eucharis Payumo</h1>
 
           <p className="mt-4 max-w-xl text-wrap">
-            I've been working with React, Typescript, CSS for 2+ years and I'm
-            looking forward to working with you!
+            Hi I'm a self-taught frontend developer. I've been working with
+            React, Typescript, CSS for 2+ years and I'm looking forward to
+            working with you!
           </p>
 
           <span className="mt-4 font-bold opacity-60">Frontend Developer</span>
@@ -45,8 +80,12 @@ const App = () => {
             <img src={phIcon} alt="Philippine Flag" className="ml-0.5 w-5" />
           </span>
 
-          <div className="mt-8 flex gap-6 *:cursor-pointer">
-            <a href="https://github.com/DaveEucharis" target="_blank">
+          <div className="mt-8 flex gap-8 *:cursor-pointer">
+            <a
+              className="[&>svg]:size-10"
+              href="https://github.com/DaveEucharis"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -69,7 +108,9 @@ const App = () => {
                 </defs>
               </svg>
             </a>
+
             <a
+              className="[&>svg]:size-10"
               href="https://mail.google.com/mail/u/0/#sent?compose=GTvVlcSMTthgtlqnlPCpJcKXKMZqTlTHSSrxDfxdfqWtFNTLMDLLSTwxFFGqbxSBRkfJgKVJZRQbf"
               target="_blank"
             >
@@ -95,6 +136,31 @@ const App = () => {
                     <rect width="25" height="25" fill="white" />
                   </clipPath>
                 </defs>
+              </svg>
+            </a>
+
+            {/* RESUME LINK STILL MISSING */}
+            <a className="[&>svg]:size-10" href="" target="_blank">
+              <svg
+                fill="#ffffff"
+                height="200px"
+                width="200px"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 60 60"
+                xmlSpace="preserve"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <path d="M38.914,0H6.5v60h47V14.586L38.914,0z M34.5,31c0,0.553-0.448,1-1,1h-10c-0.552,0-1-0.447-1-1s0.448-1,1-1h10 C34.052,30,34.5,30.447,34.5,31z M16.262,23.479l0.32-0.741c0.291-0.674,0.769-1.207,1.382-1.541l2.204-1.087 c-0.969-0.622-1.667-1.558-2.083-2.793c-0.684-0.417-1.115-1.158-1.115-1.984v-0.667c0-0.668,0.289-1.293,0.778-1.73 c0.096-0.613,0.254-1.189,0.471-1.719c0.102-0.247,0.188-0.432,0.257-0.582c0.046-0.1,0.104-0.224,0.112-0.259 c0.003-0.032-0.002-0.153-0.086-0.573c-0.065-0.327-0.108-0.627-0.138-0.884c-0.037-0.322,0.065-0.645,0.279-0.885 c0.448-0.5,1.321-0.477,1.739,0.056c0.076,0.097,0.231,0.255,0.534,0.459c0.512,0.346,1.208,0.502,1.937,0.438 c0.147-0.012,0.297-0.018,0.451-0.018c3.896,0,5.183,2.053,5.54,3.951c0.5,0.438,0.794,1.068,0.794,1.745v0.667 c0,0.826-0.431,1.567-1.115,1.984c-0.418,1.24-1.12,2.178-2.095,2.801l2.122,1.083c0.632,0.317,1.135,0.848,1.447,1.531l0.344,0.752 l-0.674,0.479C27.792,25.296,25.592,26,23.302,26c-2.298,0-4.505-0.709-6.384-2.052L16.262,23.479z M19.5,31 c0,0.26-0.11,0.52-0.29,0.71C19.02,31.89,18.77,32,18.5,32s-0.53-0.11-0.71-0.3c-0.18-0.181-0.29-0.44-0.29-0.7 c0-0.261,0.11-0.521,0.29-0.71c0.36-0.36,1.05-0.37,1.42,0C19.39,30.479,19.5,30.739,19.5,31z M17.5,36c0-0.553,0.448-1,1-1h17 c0.552,0,1,0.447,1,1s-0.448,1-1,1h-17C17.948,37,17.5,36.553,17.5,36z M22.686,47.766c-0.031,0.918-1.045,1.262-1.707,0.707 c-0.935-0.784-1.871-1.567-2.806-2.351c-0.99-0.83,0.433-2.237,1.414-1.415c0.414,0.347,0.828,0.693,1.241,1.04 c0.268-2.261,1.005-4.441,3.196-5.582c1.142-0.594,2.154,1.132,1.009,1.727C22.863,43.023,22.759,45.599,22.686,47.766z M37.637,46.259c-0.246-0.337-3.424,1.211-4.333,0.883c-0.713-0.257-1.248-0.585-1.697-1.067c-2.122,1.151-4.536,1.774-6.407-0.259 c-0.871-0.947,0.539-2.365,1.414-1.414c1.489,1.619,3.34,0.369,4.756-0.5c0.458-0.281,1.106-0.109,1.368,0.359 c1.034,1.843,3.535-0.242,4.992-0.132c0.773,0.059,1.209,0.542,1.632,1.121C40.126,46.293,38.389,47.289,37.637,46.259z M41.21,36.71C41.02,36.89,40.76,37,40.5,37c-0.26,0-0.52-0.11-0.71-0.29C39.6,36.52,39.5,36.27,39.5,36 c0-0.271,0.11-0.521,0.29-0.71c0.38-0.37,1.04-0.37,1.42,0c0.18,0.189,0.29,0.449,0.29,0.71C41.5,36.27,41.4,36.52,41.21,36.71z M46.21,36.7C46.02,36.89,45.76,37,45.5,37c-0.26,0-0.52-0.11-0.71-0.29C44.6,36.52,44.5,36.27,44.5,36 c0-0.271,0.11-0.521,0.29-0.71c0.38-0.37,1.04-0.37,1.42,0c0.18,0.189,0.29,0.449,0.29,0.71C46.5,36.26,46.4,36.51,46.21,36.7z M45.5,32h-7c-0.552,0-1-0.447-1-1s0.448-1,1-1h7c0.552,0,1,0.447,1,1S46.052,32,45.5,32z M37.5,16V2l14,14H37.5z"></path>{" "}
+                </g>
               </svg>
             </a>
           </div>
@@ -242,51 +308,49 @@ const App = () => {
         </div>
       </section>
       {/* Projects Section */}
-      <section>
-        <div className="px-8 pt-10">
-          <h1 className="text-center text-5xl font-bold">Projects</h1>
+      <section id="projects">
+        <div className="pt-10">
+          <h1 className="bg-white/2 p-6 text-center text-5xl font-bold">
+            Projects
+          </h1>
 
           <Projects />
         </div>
       </section>
 
       {/* About */}
-      <section className="py-20">
-        <h1 className="mt- text-center text-5xl font-bold">About Me</h1>
+      <section id="aboutme" className="py-20">
+        <h1 className="bg-white/2 p-8 text-center text-5xl font-bold">
+          About Me
+        </h1>
 
         <p className="mx-auto mt-12 max-w-4xl px-4 text-wrap">
-          {/* Greetings, I'm Dave Eucharis Payumo, I've been coding since I was 12
-          years old but for my favorite game "Minecraft", now you might ask,
-          how's that relevant? Well, because of Javascript, yes, I've been
-          writing code */}
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
-          consequatur exercitationem aut quae, tempore ab animi quam. Excepturi
-          eaque perspiciatis delectus quae enim saepe minima voluptate earum,
-          facilis, distinctio dolorem architecto debitis? Velit saepe id
-          assumenda libero fuga magnam expedita? lorem
+          Greetings. I'm Dave Eucharis Payumo. I've been coding since I was 12
+          years old, but for my favorite game, "Minecraft," now you might ask,
+          how's that relevant? Well, because of Javascript, I like writing mods
+          on that game, and it uses Javascript as its programming language. At
+          that time, I didn't know that I was using Javascript; I just
+          downloaded a bunch of mods and tried to make sense of them until
+          finally I could write my own. Now that I've encountered Web
+          Development and tried to learn it, I questioned myself: Why does it
+          look so familiar? Until I found out it was just JavaScript all along.
           <br />
           <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, atque
-          reprehenderit! Doloremque quasi cupiditate nesciunt quam iste optio
-          laboriosam. Placeat eius repudiandae, eos assumenda facere veniam
-          dicta officiis id! Et, autem veritatis. Unde quae inventore nisi a
-          quam perspiciatis ullam laboriosam impedit placeat, nobis quis! Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi
-          beatae ducimus. Voluptatem voluptas, rem repellat qui sequi explicabo
-          quia nobis nostrum earum, assumenda minima quidem maxime ab voluptates
-          sed.
+          And so, here I am developing websites. Why? Well, it's fun. I find
+          myself always interested when it comes to solving problems. I
+          challenge myself to solve technical problems I could never have
+          imagined I could solve, and because I scratch my head and bang it
+          against the wall, it feels so satisfying when I finally come up with a
+          solution. I did a lot of silly projects that I didn't include here,
+          but one thing I learned about coding is that "you don't have to
+          memorize a thing"
           <br />
           <br />
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          molestias placeat sunt numquam id non labore cumque, vel expedita eos
-          fuga amet doloremque rem asperiores facilis dignissimos et eum officia
-          illum, repellat consectetur eligendi ipsam quod quasi. Optio, atque.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-          reiciendis a quo sed consequatur quae architecto! Quisquam consequatur
-          sequi explicabo fugiat incidunt quidem sunt quo neque? Aliquam
-          molestiae magni quae! Nesciunt!
+          It can be really difficult going the self-taught route, as it takes a
+          lot of discipline and consistency to continue learning. Building
+          websites was a fun hobby of mine until now, and I want to take my
+          skills to the next level. So, if you want to work with me, just ask.
+          I'll even do it for free if I feel like it. &#128523;
         </p>
       </section>
 
