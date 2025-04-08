@@ -1,6 +1,6 @@
-import homehugSS from "../assets/HomeHug.png";
-import crashSS from "../assets/Crash.png";
-import pingpongScorerSS from "../assets/Pingpong-Scorer.png";
+import homehugSS from "../assets/HomeHug.webp";
+import crashSS from "../assets/Crash.webp";
+import pingpongScorerSS from "../assets/Pingpong-Scorer.webp";
 
 type projectsData = {
   img: string;
@@ -13,21 +13,20 @@ const Projects = () => {
   const projectsData: projectsData = [
     {
       img: homehugSS,
-      title: "HomeHug",
-      details:
-        "A landing page for a conduminuim unit in ortigas called Deca-Homes",
-      link: "#",
+      title: "Home Hug",
+      details: "A Condominium Unit, located at Urban Deca-Homes Ortigas",
+      link: "https://home-hug.vercel.app/",
     },
     {
       img: crashSS,
       title: "Crash Insurance",
-      details: "An Vehicle Insurance Seller",
-      link: "#",
+      details: "A local Vehicle Insurance business in Bulacan PH.",
+      link: "https://crash-insurance.vercel.app/",
     },
     {
       img: pingpongScorerSS,
       title: "Ping-pong Scorer",
-      details: "A scorer for pingpong or table tennis",
+      details: "Helps scoring, tracking service in ping-pong",
       link: "https://pingpong-scorer.vercel.app/",
     },
   ];

@@ -20,6 +20,10 @@ body {
   @apply scale-150 !opacity-100 [&>p]:opacity-100 [&>svg]:drop-shadow-[0_0_0.1rem_var(--color-primary)];
 }
 
+@utility ctaShadow {
+  @apply [&>svg]:hover:drop-shadow-[0_0_0.2rem_white];
+}
+
 @utility flex-center {
   @apply flex items-center justify-center;
 }
@@ -34,8 +38,18 @@ body {
   text-shadow: 0 0 0.3rem white;
 }
 
-@utility transition-w {
-  transition: width 0.15s;
+@utility transition-w-* {
+  transition: width --value([ *]);
+}
+
+@utility border-blink-animation {
+  animation: blink 0.7s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-right-color: rgba(255, 255, 255, 0);
+  }
 }
 
 @utility moon-animation {

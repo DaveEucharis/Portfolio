@@ -7,22 +7,26 @@ import LogoContainer from "./components/LogoContainer";
 import Projects from "./components/Projects";
 
 import logoAnimation from "./utility/LogoAnimation";
+import devAnimation from "./utility/devAnimation";
 
 const App = () => {
   const logoParent = useRef<HTMLDivElement>(null);
+  const devElement = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (logoParent.current) logoAnimation(logoParent.current);
+
+    if (devElement.current) devAnimation(devElement.current);
   }, []);
   return (
     <>
-      <nav className="fixed z-10 w-full bg-white/3 p-5 backdrop-blur-sm">
-        <ul className="mr-24 ml-auto flex w-fit gap-12">
+      <nav className="fixed z-10 w-[50%] rounded-xl bg-white/3 p-5 backdrop-blur-sm max-md:hidden">
+        <ul className="flex justify-center gap-12">
           <li>
             <a className="peer text-shadow cursor-pointer text-xl" href="#home">
               Home
             </a>
-            <div className="transition-w ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
+            <div className="transition-w-[150ms] ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
           </li>
           <li>
             <a
@@ -31,7 +35,7 @@ const App = () => {
             >
               Projects
             </a>
-            <div className="transition-w ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
+            <div className="transition-w-[150ms] ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
           </li>
           <li>
             <a
@@ -40,7 +44,7 @@ const App = () => {
             >
               About Me
             </a>
-            <div className="transition-w ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
+            <div className="transition-w-[150ms] ml-auto h-0.5 w-0 bg-white peer-hover:ml-0 peer-hover:w-full"></div>
           </li>
         </ul>
       </nav>
@@ -53,7 +57,9 @@ const App = () => {
         <div className="moon-animation absolute -z-10 size-28 rounded-full bg-amber-300 inset-shadow-sm inset-shadow-amber-500 brightness-5 drop-shadow-[0_0_10rem_var(--moon-color)]"></div>
 
         <div className="p-4">
-          <h1 className="text-7xl font-bold">Dave Eucharis Payumo</h1>
+          <h1 className="text-7xl font-bold max-sm:text-5xl">
+            Dave Eucharis Payumo
+          </h1>
 
           <p className="mt-4 max-w-xl text-wrap">
             Hi I'm a self-taught frontend developer. I've been working with
@@ -61,7 +67,12 @@ const App = () => {
             working with you!
           </p>
 
-          <span className="mt-4 font-bold opacity-60">Frontend Developer</span>
+          <h3
+            ref={devElement}
+            className="transition-w-[0.5s] border-blink-animation mt-4 w-40 overflow-hidden border-r-2 border-r-white font-bold text-nowrap opacity-60"
+          >
+            Frontend Developer
+          </h3>
 
           <span className="mt-4 flex gap-0.5 opacity-60">
             <svg
@@ -82,7 +93,7 @@ const App = () => {
 
           <div className="mt-8 flex gap-8 *:cursor-pointer">
             <a
-              className="[&>svg]:size-10"
+              className="ctaShadow [&>svg]:size-10"
               href="https://github.com/DaveEucharis"
               target="_blank"
             >
@@ -93,10 +104,10 @@ const App = () => {
                 viewBox="0 0 25 25"
                 fill="none"
               >
-                <g clip-path="url(#clip0_2_257)">
+                <g clipPath="url(#clip0_2_257)">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M12.4628 0C5.57117 0 0 5.72917 0 12.8169C0 18.4826 3.56964 23.2784 8.52168 24.9758C9.14082 25.1034 9.3676 24.7 9.3676 24.3607C9.3676 24.0635 9.34719 23.0451 9.34719 21.9839C5.88036 22.7479 5.15842 20.456 5.15842 20.456C4.60128 18.9706 3.77577 18.5888 3.77577 18.5888C2.64107 17.8036 3.85842 17.8036 3.85842 17.8036C5.11709 17.8885 5.77755 19.1193 5.77755 19.1193C6.89158 21.0714 8.68673 20.5198 9.40893 20.1802C9.51199 19.3526 9.84235 18.7797 10.1931 18.4615C7.42806 18.1643 4.51888 17.0609 4.51888 12.1378C4.51888 10.7372 5.01378 9.59141 5.79796 8.70026C5.67423 8.38203 5.24082 7.06615 5.92194 5.30495C5.92194 5.30495 6.97423 4.96536 9.34694 6.62057C10.3628 6.34002 11.4104 6.1973 12.4628 6.19609C13.5151 6.19609 14.5878 6.34479 15.5783 6.62057C17.9513 4.96536 19.0036 5.30495 19.0036 5.30495C19.6847 7.06615 19.251 8.38203 19.1273 8.70026C19.9321 9.59141 20.4066 10.7372 20.4066 12.1378C20.4066 17.0609 17.4974 18.143 14.7117 18.4615C15.1658 18.8646 15.5577 19.6284 15.5577 20.838C15.5577 22.5568 15.5372 23.9362 15.5372 24.3604C15.5372 24.7 15.7643 25.1034 16.3832 24.976C21.3352 23.2781 24.9048 18.4826 24.9048 12.8169C24.9253 5.72917 19.3337 0 12.4628 0Z"
                     fill="white"
                   />
@@ -110,7 +121,7 @@ const App = () => {
             </a>
 
             <a
-              className="[&>svg]:size-10"
+              className="ctaShadow [&>svg]:size-10"
               href="https://mail.google.com/mail/u/0/#sent?compose=GTvVlcSMTthgtlqnlPCpJcKXKMZqTlTHSSrxDfxdfqWtFNTLMDLLSTwxFFGqbxSBRkfJgKVJZRQbf"
               target="_blank"
             >
@@ -121,14 +132,14 @@ const App = () => {
                 viewBox="0 0 25 25"
                 fill="none"
               >
-                <g clip-path="url(#clip0_2_266)">
+                <g clipPath="url(#clip0_2_266)">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M25 5.57638V21.0652L18.9562 13.5112L17.8078 14.4303L23.9104 22.0592H1.08964L7.19223 14.4303L6.04376 13.5112L0 21.0652V5.57636L12.4993 16.4154L25 5.57638ZM24.9991 2.9427V3.62795L12.4999 14.467L0.000585938 3.62796V2.9427H24.9991Z"
                     fill="white"
                     stroke="white"
-                    stroke-width="0.416667"
+                    strokeWidth="0.416667"
                   />
                 </g>
                 <defs>
@@ -139,8 +150,11 @@ const App = () => {
               </svg>
             </a>
 
-            {/* RESUME LINK STILL MISSING */}
-            <a className="[&>svg]:size-10" href="" target="_blank">
+            <a
+              className="ctaShadow [&>svg]:size-10"
+              href="https://www.dropbox.com/scl/fi/99n7kugpn4uqjnvi9b1qd/Dave-Resume-Generic.docx?rlkey=h2sowt9g70a8hmnp821khe09d&st=baq33lx3&dl=0"
+              target="_blank"
+            >
               <svg
                 fill="#ffffff"
                 height="200px"
@@ -155,7 +169,7 @@ const App = () => {
                 <g
                   id="SVGRepo_tracerCarrier"
                   strokeLinecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
@@ -224,7 +238,7 @@ const App = () => {
                 viewBox="0 0 30 31"
                 fill="none"
               >
-                <g clip-path="url(#clip0_2_241)">
+                <g clipPath="url(#clip0_2_241)">
                   <path
                     d="M25.5 0.5H4.5C2.01472 0.5 0 2.51472 0 5V26C0 28.4853 2.01472 30.5 4.5 30.5H25.5C27.9853 30.5 30 28.4853 30 26V5C30 2.51472 27.9853 0.5 25.5 0.5Z"
                     fill="#F7DF1E"
@@ -333,7 +347,7 @@ const App = () => {
           downloaded a bunch of mods and tried to make sense of them until
           finally I could write my own. Now that I've encountered Web
           Development and tried to learn it, I questioned myself: Why does it
-          look so familiar? Until I found out it was just JavaScript all along.
+          look so familiar? Until I found out it was just Javascript all along.
           <br />
           <br />
           And so, here I am developing websites. Why? Well, it's fun. I find
