@@ -324,9 +324,9 @@ const App = () => {
       {/* Projects Section */}
       <section id="projects">
         <div className="pt-10">
-          <h1 className="bg-white/2 p-6 text-center text-5xl font-bold">
+          <h2 className="bg-white/2 p-6 text-center text-5xl font-bold">
             Projects
-          </h1>
+          </h2>
 
           <Projects />
         </div>
@@ -334,9 +334,9 @@ const App = () => {
 
       {/* About */}
       <section id="aboutme" className="py-20">
-        <h1 className="bg-white/2 p-8 text-center text-5xl font-bold">
+        <h2 className="bg-white/2 p-8 text-center text-5xl font-bold">
           About Me
-        </h1>
+        </h2>
 
         <p className="mx-auto mt-12 max-w-4xl px-4 text-wrap">
           Greetings. I'm Dave Eucharis Payumo. I've been coding since I was 12
