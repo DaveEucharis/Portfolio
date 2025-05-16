@@ -1,6 +1,7 @@
 import homehugSS from "../assets/HomeHug.webp";
 import crashSS from "../assets/Crash.webp";
 import pingpongScorerSS from "../assets/Pingpong-Scorer.webp";
+import wordFactorySS from "../assets/word-factory.webp";
 
 type projectsData = {
   img: string;
@@ -28,6 +29,12 @@ const Projects = () => {
       title: "Ping-pong Scorer",
       details: "Helps scoring, tracking service in ping-pong",
       link: "https://pingpong-scorer.vercel.app/",
+    },
+    {
+      img: wordFactorySS,
+      title: "Word Factory",
+      details: "Full-stack application, a multiplayer game",
+      link: "https://word-factory.vercel.app/",
     },
   ];
 
