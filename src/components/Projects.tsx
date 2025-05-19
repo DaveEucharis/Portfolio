@@ -46,7 +46,11 @@ const Projects = () => {
           className="group w-sm cursor-pointer transition-transform hover:-translate-y-5"
         >
           <a href={v.link} target="_blank">
-            <img src={v.img} alt="" className="h-50 w-full rounded-lg" />
+            <img
+              src={v.img}
+              alt=""
+              className="h-50 w-full rounded-lg object-contain"
+            />
             <h2 className="mt-2 text-2xl font-bold">{v.title}</h2>
             <p className="mt-2 text-sm opacity-80">{v.details}</p>
           </a>
