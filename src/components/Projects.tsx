@@ -43,7 +43,7 @@ const Projects = () => {
       {projectsData.map((v, i) => (
         <li
           key={i}
-          className="group w-sm cursor-pointer transition-transform hover:-translate-y-5"
+          className="group w-fit cursor-pointer transition-transform hover:-translate-y-5"
         >
           <a href={v.link} target="_blank">
             <img

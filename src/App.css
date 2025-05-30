@@ -51,25 +51,3 @@ body {
     border-right-color: rgba(255, 255, 255, 0);
   }
 }
-
-@utility moon-animation {
-  animation: moon 40s linear infinite;
-}
-
-@keyframes moon {
-  0% {
-    transform: translateX(-80vw);
-  }
-  25% {
-    transform: translateX(-25rem) translateY(-9rem);
-  }
-  50% {
-    transform: translateY(-15rem);
-  }
-  75% {
-    transform: translateX(25rem) translateY(-9rem);
-  }
-  100% {
-    transform: translateX(80vw);
-  }
-}

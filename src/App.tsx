@@ -54,8 +54,6 @@ const App = () => {
         id="home"
         className="flex-center relative min-h-dvh gap-6 overflow-hidden max-sm:flex-col"
       >
-        <div className="moon-animation absolute -z-10 size-28 rounded-full bg-amber-300 inset-shadow-sm inset-shadow-amber-500 brightness-5 drop-shadow-[0_0_10rem_var(--moon-color)]"></div>
-
         <div className="p-4">
           <h1 className="text-7xl font-bold max-sm:text-5xl">
             Dave Eucharis Payumo
@@ -88,7 +86,11 @@ const App = () => {
               />
             </svg>
             <p className="text-xs">Bulacan, Philippines</p>
-            <img src={phIcon} alt="Philippine Flag" className="ml-0.5 w-5" />
+            <img
+              src={phIcon}
+              alt="Philippine Flag"
+              className="ml-0.5 w-5 rounded-sm"
+            />
           </span>
 
           <div className="mt-8 flex gap-8 *:cursor-pointer">
