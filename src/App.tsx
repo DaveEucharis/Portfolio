@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import "./App.css";
 
 import phIcon from "./assets/ph-flag.svg";
 
-import LogoContainer from "./components/LogoContainer";
+// import LogoContainer from "./components/LogoContainer";
 import Projects from "./components/Projects";
+import TechStack from "./components/TechStack";
 
 import logoAnimation from "./utility/LogoAnimation";
 import devAnimation from "./utility/devAnimation";
@@ -20,8 +22,8 @@ const App = () => {
   }, []);
   return (
     <>
-      <nav className="fixed z-10 w-[50%] rounded-xl bg-white/3 p-5 backdrop-blur-sm max-md:hidden">
-        <ul className="flex justify-center gap-12">
+      <nav className="fixed z-10 w-full rounded-xl bg-white/3 p-5 backdrop-blur-sm max-md:hidden">
+        <ul className="mr-20 flex justify-end gap-16">
           <li>
             <a className="peer text-shadow cursor-pointer text-xl" href="#home">
               Home
@@ -52,9 +54,9 @@ const App = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="flex-center relative min-h-dvh gap-6 overflow-hidden max-sm:flex-col"
+        className="relative flex min-h-dvh items-center overflow-hidden"
       >
-        <div className="p-4">
+        <div className="mt-20 ml-22 w-full p-4 max-md:mt-12 max-md:ml-8 max-sm:mt-0 max-sm:ml-0">
           <h1 className="text-7xl font-bold max-sm:text-5xl">
             Dave Eucharis Payumo
           </h1>
@@ -180,9 +182,19 @@ const App = () => {
               </svg>
             </a>
           </div>
+
+          <TechStack />
         </div>
 
-        <div
+        <motion.div
+          animate={{ color: "#020202" }}
+          transition={{ duration: 5, ease: "easeInOut" }}
+          className="logo-lighting absolute right-0 -translate-y-12 text-[18rem] font-semibold text-white select-none max-xl:hidden"
+        >
+          {"</>"}
+        </motion.div>
+
+        {/* <div
           ref={logoParent}
           className="mt-4 flex flex-col flex-wrap gap-10 px-6 max-sm:flex-row max-sm:justify-around"
         >
@@ -321,7 +333,7 @@ const App = () => {
             }
             name="Tailwind"
           />
-        </div>
+        </div> */}
       </section>
       {/* Projects Section */}
       <section id="projects">

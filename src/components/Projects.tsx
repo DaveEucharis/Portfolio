@@ -3,6 +3,8 @@ import crashSS from "../assets/Crash.webp";
 import pingpongScorerSS from "../assets/Pingpong-Scorer.webp";
 import wordFactorySS from "../assets/word-factory.webp";
 
+import { motion } from "motion/react";
+
 type projectsData = {
   img: string;
   title: string;
@@ -41,7 +43,11 @@ const Projects = () => {
   return (
     <ul className="mt-20 flex flex-wrap justify-around gap-12 px-4">
       {projectsData.map((v, i) => (
-        <li
+        <motion.li
+          initial={{ opacity: 0, translateY: "-2rem" }}
+          whileInView={{ opacity: 1, translateY: "0" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
           key={i}
           className="group w-fit cursor-pointer transition-transform hover:-translate-y-5"
         >
@@ -54,7 +60,7 @@ const Projects = () => {
             <h2 className="mt-2 text-2xl font-bold">{v.title}</h2>
             <p className="mt-2 text-sm opacity-80">{v.details}</p>
           </a>
-        </li>
+        </motion.li>
       ))}
     </ul>
   );
