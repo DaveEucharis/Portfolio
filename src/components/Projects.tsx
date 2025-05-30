@@ -3,7 +3,7 @@ import crashSS from "../assets/Crash.webp";
 import pingpongScorerSS from "../assets/Pingpong-Scorer.webp";
 import wordFactorySS from "../assets/word-factory.webp";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 type projectsData = {
   img: string;

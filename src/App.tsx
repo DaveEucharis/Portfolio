@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import "./App.css";
 
 import phIcon from "./assets/ph-flag.svg";

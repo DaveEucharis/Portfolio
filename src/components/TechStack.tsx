@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 type Stack = { tech: string; svg: ReactElement<any> }[];
 
